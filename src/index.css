@@ -1,5 +1,19 @@
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0)
+  }
+}
+
+
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +24,122 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+  display: flex;
+  gap: 50px;
+  list-style-type: none;
+  align-items: center;
+  margin-right: 70px;
+  font-size: 20px;
+
+  
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.05);
+}
+
+.text--link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+a {
+ height: 150px;
+  width: 200px;
+  margin-top: 30px;
+ 
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  animation: transitionIn 0.65s;
+}
+
+.header {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header--title {
+  margin-left: 70px;
+}
+
+.footer {
+  border: 1px solid black;
+  display: flex;
+  height: 4vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  width: 100%;
+  justify-content: center;
+  background-image: url("assets/loren-king-EA45-AXlvWk-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 70%;
+  position: relative;
+
+}
+
+.shopNow {
+  z-index: 2;
+  background-color: rgb(225, 192, 152);
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  height: 200px;
+  font-size: 30px;
+  border-radius: 2em;
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border: 1px solid black;
+}
+
+.shop--button {
+  width: 40%;
+  height: 30%;
+  border-radius: 1em;
+  cursor: pointer;
+  font-size: 20px;
+  
+  
+}
+
+.shop--button:hover {
+  transform: scale(1.1);
+}
+
+.cart--count {
+  margin-left: -40px;
+  
 }
