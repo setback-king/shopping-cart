@@ -1,24 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
 
 const Home =() => {
 
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-        let path = `/items`; 
-        navigate(path);
-    }
-
-
-
   return (
     <div className="home">
         <div className="shopNow">
-            <span>SHOP OUR FARM SUPPLIES NOW</span>
-            <button className='shop--button' onClick={routeChange}>SHOP</button>
+            <span style={{marginBottom: "10px", marginTop: "15px"}}>BUY OUR FARM SUPPLIES NOW</span>
+            <span className='shop--button'><Link className='text--link' to="/items" style={{color: "white", backgroundColor: "black", border: "solid black 1px", fontSize: "25px", padding: "9px", borderRadius: "2em", fontWeight: "bold"}}>SHOP</Link></span>
         </div>
        
     </div>
