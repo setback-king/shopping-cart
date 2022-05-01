@@ -5,7 +5,7 @@ import ItemsPage from "./components/ItemsPage";
 import Home from "./components/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import ItemInfoPage from "./components/ItemInfoPage";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Data from "./components/Data";
 
 
@@ -17,31 +17,75 @@ const App = () => {
   const list = Data()
 
   const [cart, setCart] = useState([])
-  const [pageItem, setPageItem] = useState([])
+  const [itemList, setItemList] = useState([])
   
 
+  useEffect(() => {
+    setItemList(list)
+  }, [])
+
+
   
- const handleClick = (id) => {
-  list.forEach(item => {
-    if(item.id === id) {
-      setPageItem(item)
+  const updateQuantity = (text, id) => {
       
-    }
-  }) 
- }
- 
-
+         setCart(prevValue => prevValue.map(item => {   
+           if(item.id === id) {
+             if(text === "+") {
+             return {...item, quantity: item.quantity + 1}
+             }
+             else if ((item.quantity > 0) && (text === "-")) {
+               return {...item, quantity: item.quantity - 1}
+             }
+             else if (item.quantity === 0) {
+               return item
+             }
+             
+           }
+           else return item
+         }))
+         setItemList(prevValue => prevValue.map(item => {
+          if(item.id === id) {
+            if(text === "+") {
+            return {...item, quantity: item.quantity + 1}
+            }
+            else if ((item.quantity > 0) && (text === "-")) {
+              return {...item, quantity: item.quantity - 1}
+            }
+            else if (item.quantity === 0) {
+              return item
+            }
+            
+          }
+          else return item
+        }))
+          
+       
+  }
 
   const addCart = (id) => {
-    list.map(item => {
+    itemList.map(item => {
       if(item.id === id) {
+        if(cart.includes(item) === false) {
         setCart(prevValue => [...prevValue, item])
+        }
+      
         }
     })
   }
 
-  console.log(pageItem)
-
+  const deleteCart =(id) => {
+    setCart(prevValue => prevValue.filter(item => {
+     if(item.id !== id) {
+       return item
+     }
+    }))
+     setItemList(prevValue => prevValue.map(item => {
+       if(item.id === id) {
+         return {...item, quantity: 1}
+       }
+       else return item
+     }))
+  }
 
   return (
 
@@ -52,9 +96,9 @@ const App = () => {
       <Routes>
        
           <Route path="/" element={<Home  />}/>
-          <Route path="/items" element={<ItemsPage handleClick={handleClick} addCart={addCart}/>}/>
-          <Route path="/items/:item" element={<ItemInfoPage itemInfo={pageItem} addCart={addCart}/>}/>
-          <Route path="/cart" element={<ShoppingCart cart={cart} />}/>
+          <Route path="/items" element={<ItemsPage addCart={addCart}/>}/>
+          <Route path="/items/:id" element={<ItemInfoPage addCart={addCart}/>}/>
+        <Route path="/cart" element={<ShoppingCart cart={cart} updateQuantity={updateQuantity} deleteCart={deleteCart} />}/>
           <Route
               path="*"
               element={

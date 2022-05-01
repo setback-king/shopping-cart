@@ -84,15 +84,17 @@ a {
 }
 
 .header--title {
-  margin-left: 70px;
+  margin-left: 60px;
 }
 
 .footer {
   display: flex;
   height: 4vh;
+  min-height: 70px;
   align-items: center;
   justify-content: center;
   background-color: rgb(225, 192, 152);
+  font-size: 20px;
 }
 
 .home {
@@ -130,7 +132,6 @@ a {
 .shop--button {
   width: 40%;
   height: 30%;
-  border-radius: 1em;
   cursor: pointer;
   font-size: 20px;
   
@@ -138,7 +139,7 @@ a {
 }
 
 .shop--button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .cart--count {
@@ -180,6 +181,11 @@ a {
 .image {
   height: 200px;
   width: 200px;
+}
+
+.eachItemImageDiv {
+  height: 300px;
+  width: 300px;
 }
 
 .item--image {
@@ -240,18 +246,78 @@ a {
 .itemInfoPage {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 70%;
   align-items: center;
-  gap: 40px;
-  font-size: 40px;
-  background-color: rgb(225, 192, 152);
+  gap: 10px;
   border-radius: 2em;
   animation: transitionIn .55s;
   align-content: center;
   margin: auto;
-  padding: 20px;
   justify-content: center;
   text-align: center;
+  padding: 10px 120px;
 
+}
+
+.cart--item {
+  display: flex;
+  font-size: 20px;
+  margin-top: 20px;
+  gap: 220px;
+  flex-wrap: wrap;
+  
+  
+}
+
+.quantity {
+  border: 2px solid rgb(225, 192, 152);
+  text-align: center;
+  cursor: pointer;
+  color: rgb(225, 192, 152);
+  font-weight: bold;
+}
+
+.quantity--amount {
+  border: 1px solid black;
+  padding: 4px 10px;
+  text-align: center;
+}
+
+.deleteCart {
+  margin-left: 20px;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.contain {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  flex-wrap: wrap;
+}
+
+.contain--quantity {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 400px;
+  justify-items: flex-start;
+  flex-wrap: wrap;
+  margin-right: -200px;
+  
+  
+}
+
+.entireCart {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  align-content: center;
+  
+  align-items: center;
+}
+
+.totalCost {
+  text-align: center;
+  font-size: 25px;
+  
 }
