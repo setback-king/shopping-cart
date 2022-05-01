@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const ShoppingCartItem = ({url, name, price, id, quantity, updateQuantity, deleteCart}) => {
+const ShoppingCartItem = ({url, name, price, id, quantity, addQuantity, lessQuantity, deleteCart}) => {
 
 
 
@@ -17,9 +17,9 @@ const ShoppingCartItem = ({url, name, price, id, quantity, updateQuantity, delet
         </div>
         <div className="contain--quantity">
             <div style={{width: "60px"}}>${price}</div>
-            <div id={id} style={styling}className="quantity" onClick={(e) => updateQuantity(e.target.textContent, e.target.id)}>-</div>
+            <div id={id} style={styling}className="quantity" onClick={(e) => lessQuantity(e.target.id)}>-</div>
             <div  className='quantity--amount' style={{marginLeft: "-10px", marginRight: "-10px"}}>{quantity}</div>
-            <div id={id} style={styling} className="quantity" onClick={(e) => updateQuantity(e.target.textContent, e.target.id)}>+</div>
+            <div id={id} style={styling} className="quantity" onClick={(e) => addQuantity(e.target.id)}>+</div>
             <div id={id}><img id={id} onClick={(e) => deleteCart(e.target.id)} className="deleteCart" src="itemPhotos/delete.png" alt="" /></div>
         </div>
         <div className='contain'><div>${totalCost}</div></div>

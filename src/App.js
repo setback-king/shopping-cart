@@ -19,59 +19,52 @@ const App = () => {
   const [cart, setCart] = useState([])
   const [itemList, setItemList] = useState([])
   
+  
 
   useEffect(() => {
     setItemList(list)
   }, [])
 
-
-  
-  const updateQuantity = (text, id) => {
-      
+  const lessQuantity = (id) => {
+    const exist = cart.find((x) => x.id === id);
+    if(exist.quantity === 1) {
+      setCart(prevValue => prevValue.filter((x) => x.id !== id))
+    }
+    else {
+      setCart(prevValue => prevValue.map((x) => 
+        x.id === id ? {...exist, quantity: exist.quantity -1} : x
+      ))
+    }
+  } 
+ 
+  const addQuantity = (id) => {
+        
          setCart(prevValue => prevValue.map(item => {   
            if(item.id === id) {
-             if(text === "+") {
              return {...item, quantity: item.quantity + 1}
              }
-             else if ((item.quantity > 0) && (text === "-")) {
-               return {...item, quantity: item.quantity - 1}
-             }
-             else if (item.quantity === 0) {
-               return item
-             }
-             
-           }
            else return item
-         }))
-         setItemList(prevValue => prevValue.map(item => {
-          if(item.id === id) {
-            if(text === "+") {
-            return {...item, quantity: item.quantity + 1}
-            }
-            else if ((item.quantity > 0) && (text === "-")) {
-              return {...item, quantity: item.quantity - 1}
-            }
-            else if (item.quantity === 0) {
-              return item
-            }
-            
-          }
-          else return item
-        }))
-          
+         }))   
        
   }
 
   const addCart = (id) => {
+    const exist = cart.find((x) => x.id === id);
+    if(exist) {
+      setCart(prevValue => prevValue.map((x) => 
+        x.id === id ? {...exist, quantity: exist.quantity + 1} : x
+      ))
+    } 
+    else {
     itemList.map(item => {
       if(item.id === id) {
-        if(cart.includes(item) === false) {
         setCart(prevValue => [...prevValue, item])
         }
       
-        }
-    })
+        })
+    }
   }
+  console.log(cart)
 
   const deleteCart =(id) => {
     setCart(prevValue => prevValue.filter(item => {
@@ -98,7 +91,7 @@ const App = () => {
           <Route path="/" element={<Home  />}/>
           <Route path="/items" element={<ItemsPage addCart={addCart}/>}/>
           <Route path="/items/:id" element={<ItemInfoPage addCart={addCart}/>}/>
-        <Route path="/cart" element={<ShoppingCart cart={cart} updateQuantity={updateQuantity} deleteCart={deleteCart} />}/>
+        <Route path="/cart" element={<ShoppingCart cart={cart} addQuantity={addQuantity} lessQuantity={lessQuantity} deleteCart={deleteCart} />}/>
           <Route
               path="*"
               element={

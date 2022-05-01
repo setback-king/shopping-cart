@@ -317,7 +317,14 @@ a {
 }
 
 .totalCost {
-  text-align: center;
-  font-size: 25px;
   
+  font-size: 25px;
+  width: 250px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.span1 {
+  position: absolute;
+  right: 0;
 }
