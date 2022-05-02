@@ -17,7 +17,7 @@ function ItemInfoPage({addCart}) {
   return (
     
     <div className="itemInfoPage">
-      <div style={{height: "35vh", backgroundColor: "tan", padding: "12px"}}><img className="item--image" style={{width: "100%", height: "100%"}} src={`../${url}`} alt=""/></div>
+      <div style={{height: "35vh", backgroundColor: "tan", padding: "12px", marginTop: "5%"}}><img className="item--image" style={{width: "100%", height: "100%"}} src={`../${url}`} alt=""/></div>
       <div className="itemInfoPage">
         <h1 style={{fontSize: "40px", marginBottom: "-20px"}}>{name}</h1>
         <p className="item--description">{description}</p>

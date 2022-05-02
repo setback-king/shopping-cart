@@ -353,7 +353,8 @@ a {
   }
   .cart--item {
     justify-content: center;
-    margin-top: 70px;
+    align-items: center;
+
   }
   .contain--quantity {
     gap: 30px;
