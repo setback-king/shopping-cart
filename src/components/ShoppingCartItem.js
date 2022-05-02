@@ -13,7 +13,7 @@ const ShoppingCartItem = ({url, name, price, id, quantity, addQuantity, lessQuan
     <div className='cart--item' id={id}>
         <div className="contain">
             <img src={url} style={{height: "100px", width: "100px"}} alt="" />
-            <span style={{marginLeft: "20px"}}><Link className="text--link" style={{color: "blue"}} to={`/items/${id}`}>{name}</Link></span>
+            <span style={{marginLeft: "20px"}}><Link className="text--link" style={{color: "blue"}} to={`/shopping-cart/items/${id}`}>{name}</Link></span>
         </div>
         <div className="contain--quantity">
             <div style={{width: "60px"}}>${price}</div>

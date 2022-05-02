@@ -14,12 +14,12 @@ const totalCart = []
 
   return (
     <div className="header">
-        <h1 className="header--title"><Link className="text--link" to="/">Frank's Farm Supply</Link></h1>
+        <h1 className="header--title"><Link className="text--link" to="/shopping-cart">Frank's Farm Supply</Link></h1>
         <nav>
-            <li ><Link className="text--link" to="/">Home</Link></li>
-            <li ><Link className='text--link' to="/items">Shop</Link></li>
+            <li ><Link className="text--link" to="/shopping-cart">Home</Link></li>
+            <li ><Link className='text--link' to="/shopping-cart/items">Shop</Link></li>
             <li >
-                <Link className='text--link' to="/cart"><img src="favicon-32x32.png" alt="" /></Link>
+                <Link className='text--link' to="/shopping-cart/cart"><img src="favicon-32x32.png" alt="" /></Link>
             </li>
                 <span className="cart--count">{cartTotalItems}</span>
            
