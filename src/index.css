@@ -337,6 +337,9 @@ a {
   position: absolute;
   right: 0;
 }
+.totalSubTotal {
+  margin-left: 50px;
+}
 
 
 @media screen and (max-width: 800px) {
@@ -357,11 +360,14 @@ a {
 
   }
   .contain--quantity {
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
   }
   .contain {
     justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    
   }
   .item--description {
     font-size: 25px;
@@ -372,5 +378,11 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
+  }
+  .footer {
+    min-height: 40px;
+  }
+  .totalSubTotal {
+    margin-left: 20px;
   }
 }
