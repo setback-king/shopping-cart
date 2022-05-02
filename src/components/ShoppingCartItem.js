@@ -21,8 +21,9 @@ const ShoppingCartItem = ({url, name, price, id, quantity, addQuantity, lessQuan
             <div  className='quantity--amount' style={{marginLeft: "-10px", marginRight: "-10px"}}>{quantity}</div>
             <div id={id} style={styling} className="quantity" onClick={(e) => addQuantity(e.target.id)}>+</div>
             <div id={id}><img id={id} onClick={(e) => deleteCart(e.target.id)} className="deleteCart" src="itemPhotos/delete.png" alt="" /></div>
+            <div style={{marginLeft: "50px"}}><div>${totalCost}</div></div>
         </div>
-        <div className='contain'><div>${totalCost}</div></div>
+        
 
     </div>
   )

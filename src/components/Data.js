@@ -1,7 +1,7 @@
 
 
 const dataList = [
-    {name: "Hay Bale", price: "5.00", url: "/itemPhotos/hay.jpeg", description: "Quality hay feed for animals, growing grass, etc.", id: "0", quantity: 1 },
+    {name: "Hay Bale", price: "5.00", url: "itemPhotos/hay.jpeg", description: "Quality hay feed for animals, growing grass, etc.", id: "0", quantity: 1 },
     {name: "Garden Hose", price: "15.00", url: "itemPhotos/garden.jpeg", description: "75ft garden hose 3/4inch diameter.", id: "1", quantity: 1},
     {name: "Sprinkler", price: "4.50", url: "itemPhotos/sprinkler.jpeg", description: "Bird eye sprinkler for lawn needs.", id: "2", quantity: 1},
     {name: "Tomato Seeds", price: "1.99", url: "itemPhotos/tomato.jpeg", description: "Heirloom tomato seeds.", id: "3", quantity: 1},
