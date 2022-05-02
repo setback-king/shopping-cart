@@ -6,12 +6,12 @@ const ShoppingCart =({cart, addQuantity, updateCart, lessQuantity, deleteCart}) 
 
  
  
-  const totalC = []
+  const totalCostArray = []
 
-  const mapp = cart.forEach(item => {
-    totalC.push(item.quantity * item.price)
+  const totalCost = cart.forEach(item => {
+    totalCostArray.push(item.quantity * item.price)
   })
-  const subTotal = totalC.reduce((partialSum, a) => partialSum + a, 0)
+  const subTotal = totalCostArray.reduce((partialSum, a) => partialSum + a, 0)
   const taxes = subTotal * 0.065
   const shipping = ((subTotal + taxes) > 50 ? 0.00 : 10.00)
   const total = subTotal + taxes + shipping
