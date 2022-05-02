@@ -88,10 +88,10 @@ const App = () => {
       <div className="main">
       <Routes>
        
-          <Route path="/shopping-cart" element={<Home  />}/>
-          <Route path="/shopping-cart/items" element={<ItemsPage addCart={addCart}/>}/>
-          <Route path="/shopping-cart/items/:id" element={<ItemInfoPage addCart={addCart}/>}/>
-          <Route path="/shopping-cart/cart" element={<ShoppingCart cart={cart} addQuantity={addQuantity} lessQuantity={lessQuantity} deleteCart={deleteCart} />}/>
+          <Route path="/" element={<Home  />}/>
+          <Route path="/items" element={<ItemsPage addCart={addCart}/>}/>
+          <Route path="/items/:id" element={<ItemInfoPage addCart={addCart}/>}/>
+          <Route path="/cart" element={<ShoppingCart cart={cart} addQuantity={addQuantity} lessQuantity={lessQuantity} deleteCart={deleteCart} />}/>
           <Route
               path="*"
               element={
