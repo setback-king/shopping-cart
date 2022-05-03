@@ -15,4 +15,4 @@
     {"name": "Horse Saddle", "price": "199.99", "url": "itemPhotos/saddle.jpeg", "description": "Quality handmade leather saddle.", "id": "13", "quantity": "0"},
     {"name": "Gas Can", "price": "34.95", "url": "itemPhotos/gas.jpeg", "description": "Standard 5-Gallon gas tank", "id": "14", "quantity": "0"},
     {"name": "Flannel Shirt", "price": "25.00", "url": "itemPhotos/flannel.jpeg", "description": "100% Cotton flannel shirt.", "id": "15", "quantity": "0"}
-]
+] 
