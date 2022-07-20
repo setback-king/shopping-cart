@@ -2,6 +2,13 @@ LIVE DEMO ----> https://setback-king.github.io/shopping-cart/
 
 This project is a fake online store, in which users can add inventory items to a cart and view it. Users have the ability to read about each item the farm store has to offer. This project enabled me to pracice using reusable components in a React App. 
 
+
+<img width="1641" alt="Screen Shot 2022-07-20 at 11 37 51 AM" src="https://user-images.githubusercontent.com/90795553/180024509-a3f1bb85-4306-4794-9c71-f91101d76f45.png">
+
+<img width="1668" alt="Screen Shot 2022-07-20 at 11 38 11 AM" src="https://user-images.githubusercontent.com/90795553/180024580-360449d7-88f9-43eb-b83b-81d04a0fcb17.png">
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
